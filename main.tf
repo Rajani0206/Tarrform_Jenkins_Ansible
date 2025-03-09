@@ -1,5 +1,4 @@
 provider "aws" {
-    region = var.aws_region
   
 }
 
@@ -8,6 +7,7 @@ module "EC2_Module" {
   vpc_cidr_block = var.vpc_cidr_block
   instance_type = var.instance_type
   ami_id= "ami-00bb6a80f01f03502"
+  region = var.aws_region
   user_data = <<-EOF
               #!/bin/bash
               # Update the system

@@ -2,6 +2,13 @@ provider "aws" {
   
 }
 
+variable "aws_region" {
+  description = "The AWS region to deploy resources in"
+  type        = string
+  default  = "ap-south-1"
+}
+
+
 module "EC2_Module" {
   source  = "github.com/Rajani0206/Terraform_Modules"
   vpc_cidr_block = var.vpc_cidr_block

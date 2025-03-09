@@ -66,10 +66,5 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            // Cleanup or any additional steps after pipeline execution
-            cleanWs()  // Clean workspace after execution
-        }
-    }
+    
 }

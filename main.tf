@@ -20,6 +20,9 @@ module "EC2_Module" {
               cd /tmp
               curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo tee /etc/apt/trusted.gpg.d/hashicorp.asc
               sudo apt-get update && sudo apt-get install terraform -y
+            EOF
+
+
   tags = {
     Name = "TerraformAnsibleInstance"
   }

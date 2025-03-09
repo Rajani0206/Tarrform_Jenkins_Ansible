@@ -12,7 +12,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 // Checkout your repository containing Terraform code and Ansible playbooks
-                git 'https://github.com/Rajani0206/Tarrform_Jenkins_Ansible.git'
+                git branch: 'main', url: 'https://github.com/Rajani0206/Tarrform_Jenkins_Ansible.git'
             }
         }
 

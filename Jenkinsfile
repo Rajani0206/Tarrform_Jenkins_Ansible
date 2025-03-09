@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {                    
                     sh """
-                    terraform init -backend-config=bucket=${TF_STATE_BUCKET} -backend-config=key=terraform.tfstate
+                    terraform init -backend-config=bucket=${TF_STATE_BUCKET} -backend-config=key=terraform.tfstate -backend-config=region=${AWS_REGION}
                     """
                 }
             }

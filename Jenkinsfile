@@ -2,8 +2,6 @@ pipeline {
     agent any
 
     environment {
-        AWS_ACCESS_KEY_ID = "AKIAV5AJXZILEAP7DCXT"
-        AWS_SECRET_ACCESS_KEY = "/f2DncAKSGBeTB2NPIsPGWwE8r6czkM+YfUcffbo"
         AWS_REGION = 'ap-south-1'         // Specify your AWS region
         TF_STATE_BUCKET = 'jenkins-ansible-terra'   // S3 bucket to store Terraform state
         TF_BACKEND_CONFIG = 'backend.tfvars'  // A file with S3 backend configuration if required

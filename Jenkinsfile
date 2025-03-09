@@ -20,11 +20,9 @@ pipeline {
 
         stage('Terraform Init') {
             steps {
-                script {
-                    echo "Using AWS Access Key ID: ${AWS_ACCESS_KEY_ID}"
-                    echo "Using AWS Secret Access Key: ${AWS_SECRET_ACCESS_KEY}"
+                script {                    
                     sh """
-                    terraform init -backend-config=bucket=${TF_STATE_BUCKET} -backend-config=key=terraform.tfstate -backend-config=region=${AWS_REGION}
+                    terraform init -backend-config=bucket=${TF_STATE_BUCKET} -backend-config=key=terraform.tfstate
                     """
                 }
             }

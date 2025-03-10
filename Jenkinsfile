@@ -51,6 +51,7 @@ pipeline {
             }
             
           steps {
+                withAWS(credentials: 'your-aws-credentials-id', region: 'ap-south-1') {
                 dir('terraform/Terrform_Jenkins_Ansible') {  // Adjust path as needed
                     sh 'terraform init -input=false'
                     sh 'terraform workspace select ${environment} || terraform workspace new ${environment}'
@@ -123,7 +124,7 @@ pipeline {
 
        stage('Run Ansible Playbook from Local') {
         steps {
-            withCredentials([sshUserPrivateKey(credentialsId: 'ansible-key', keyFileVariable: 'SSH_KEY')]) {
+            withCredentials([sshUserPrivateKey(credentialsId: 'terraform', keyFileVariable: 'SSH_KEY')]) {
                 sh """
                     export ANSIBLE_HOST_KEY_CHECKING=False
                     ansible-playbook -i "${EC2_IP}," --private-key "${SSH_KEY}" -u ubuntu webserver.yml

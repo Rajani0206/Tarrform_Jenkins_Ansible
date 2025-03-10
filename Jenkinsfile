@@ -15,7 +15,7 @@ pipeline {
         AWS_DEFAULT_REGION    = "ap-south-1"
         SSH_KEY = "/home/ubuntu/.ssh/terraform.pem"  // Replace with your private key
         ANSIBLE_PLAYBOOK = "webserver.yml"
-        GIT_REPO = "https://github.com/AkshathaMR/Ansible_Playbook.git"
+        GIT_REPO = "https://github.com/Rajani0206/Ansible_tomcat_Rajani.git"
     }
 
 
